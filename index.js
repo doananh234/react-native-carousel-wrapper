@@ -1,9 +1,11 @@
 
-import { NativeModules } from 'react-native';
+import React from 'react';
+import { NativeModules, requireNativeComponent } from 'react-native';
 
 const { RNCarouselManager } = NativeModules;
-
-var Carousel = createClass({
+import PropTypes from 'prop-types';
+import createClass from 'create-react-class';
+const Carousel = createClass({
     propTypes: {
         wrap:  PropTypes.bool,
         items: PropTypes.array,
@@ -23,6 +25,6 @@ var Carousel = createClass({
     }
 });
 
-var RNCarousel = requireNativeComponent('RNCarousel', Carousel);
+const RNCarousel = requireNativeComponent('RNCarousel', Carousel);
 Carousel.Type = RNCarouselManager.Type;
 export default Carousel;
