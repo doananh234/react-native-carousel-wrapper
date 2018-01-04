@@ -1,5 +1,8 @@
 
 # react-native-carousel-wrapper
+This library is React Native wrapper of popular Native carousel library [iCarousel](https://github.com/PhilJay/MPAndroidChart)  for ios and [CarouselLayoutManager](https://github.com/Azoft/CarouselLayoutManager), [Coverflow](https://github.com/crosswall/Android-Coverflow) for Android.
+
+Android is coming soon.
 
 ## Getting started
 
@@ -34,20 +37,48 @@
       compile project(':react-native-carousel-wrapper')
   	```
 
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNCarouselWrapper.sln` in `node_modules/react-native-carousel-wrapper/windows/RNCarouselWrapper.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Com.Reactlibrary.RNCarouselWrapper;` to the usings at the top of the file
-  - Add `new RNCarouselWrapperPackage()` to the `List<IReactPackage>` returned by the `Packages` method
-
-
 ## Usage
+### Carousel Types
+#### Property Type
+
+iCarousel supports the following built-in display types:
+
+- iCarouselTypeLinear
+- iCarouselTypeRotary
+- iCarouselTypeInvertedRotary
+- iCarouselTypeCylinder
+- iCarouselTypeInvertedCylinder
+- iCarouselTypeWheel
+- iCarouselTypeInvertedWheel
+- iCarouselTypeCoverFlow
+- iCarouselTypeCoverFlow2
+- iCarouselTypeTimeMachine
+- iCarouselTypeInvertedTimeMachine
+
+example: 
+```javascript
+<RNCarouselWrapper type={RNCarouselWrapper.Type.iCarouselTypeRotary}>
+</RNCarouselWrapper>  
+```
+
 ```javascript
 import RNCarouselWrapper from 'react-native-carousel-wrapper';
 
 // TODO: What to do with the module?
-RNCarouselWrapper;
+
+export default class App extends Component<{}> {
+  render() {
+    return (
+      <RNCarouselWrapper style={styles.container}  type={RNCarouselWrapper.Type.iCarouselTypeRotary}>
+        <View style={{width: 100, height: 100, backgroundColor: 'blue', margin: 5}}><Text>1</Text></View>
+        <View style={{width: 100, height: 100, backgroundColor: 'blue', margin: 5}}><Text>2</Text></View>
+        <View style={{width: 100, height: 100, backgroundColor: 'blue', margin: 5}}><Text>3</Text></View>
+        <View style={{width: 100, height: 100, backgroundColor: 'blue', margin: 5}}><Text>4</Text></View>
+        <View style={{width: 100, height: 100, backgroundColor: 'blue', margin: 5}}><Text>5</Text></View>
+      </RNCarouselWrapper>
+    );
+  }
+}
+
 ```
   
