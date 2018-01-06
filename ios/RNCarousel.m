@@ -35,15 +35,25 @@
 
 //#pragma clang diagnostic push
 //#pragma clang diagnostic ignored "-Wobjc-missing-super-calls"
-- (void)insertReactSubview:(id<RCTComponent>)subview atIndex:(NSInteger)atIndex {
-//  [super insertReactSubview:subview atIndex:atIndex];
+// - (void)insertReactSubview:(id<RCTComponent>)subview atIndex:(NSInteger)atIndex {
+// //  [super insertReactSubview:subview atIndex:atIndex];
   
-   [self.items addObject:subview];
+//    [self.items addObject:subview];
   
-   [self setCurrentItemIndex:0];
-  [self reloadData];
-  if (atIndex == 0) {
-  }
+//    [self setCurrentItemIndex:0];
+//   [self reloadData];
+//   if (atIndex == 0) {
+//   }
+// }
+
+- (void)didUpdateReactSubviews
+{
+    self.items = [[NSMutableArray alloc] init];
+    for (UIView *subview in self.reactSubviews) {
+        [self.items addObject:subview];
+    }
+    [self setCurrentItemIndex:0];
+    [self reloadData];
 }
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
