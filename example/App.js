@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import RNCarouselWrapper from 'react-native-carousel-wrapper';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -23,15 +24,13 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+      <RNCarouselWrapper style={styles.container}  type={RNCarouselWrapper.Type.iCarouselTypeRotary}>
+        <View style={{width: 100, height: 100, backgroundColor: 'blue', margin: 5}}><Text>1</Text></View>
+        <View style={{width: 100, height: 100, backgroundColor: 'blue', margin: 5}}><Text>2</Text></View>
+        <View style={{width: 100, height: 100, backgroundColor: 'blue', margin: 5}}><Text>3</Text></View>
+        <View style={{width: 100, height: 100, backgroundColor: 'blue', margin: 5}}><Text>4</Text></View>
+        <View style={{width: 100, height: 100, backgroundColor: 'blue', margin: 5}}><Text>5</Text></View>
+      </RNCarouselWrapper>
       </View>
     );
   }
