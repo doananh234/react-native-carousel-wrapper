@@ -9,6 +9,8 @@
 
 @implementation RNCarouselManager
 RCT_EXPORT_MODULE()
+
+@synthesize bridge = _bridge;
 - (dispatch_queue_t)methodQueue {
   return dispatch_get_main_queue();
 }
@@ -16,9 +18,10 @@ RCT_EXPORT_MODULE()
 - (UIView *)view
 {
   RNCarousel * carousel;
-  carousel = [[RNCarousel alloc] init];
+  carousel = [[RNCarousel alloc]  init];
   return carousel;
 }
+
 RCT_EXPORT_VIEW_PROPERTY(type, NSInteger)
 
 RCT_EXPORT_VIEW_PROPERTY(vertical, BOOL)
@@ -30,7 +33,7 @@ RCT_EXPORT_VIEW_PROPERTY(perspective, CGFloat)
 RCT_EXPORT_VIEW_PROPERTY(decelerationRate, CGFloat)
 RCT_EXPORT_VIEW_PROPERTY(scrollSpeed, CGFloat)
 RCT_EXPORT_VIEW_PROPERTY(bounceDistance, CGFloat)
-RCT_EXPORT_VIEW_PROPERTY(items, NSMutableArray);
+RCT_EXPORT_VIEW_PROPERTY(onPressItem, RCTBubblingEventBlock)
 - (NSDictionary *)constantsToExport
 {
   return @{
