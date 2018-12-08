@@ -16,7 +16,8 @@ const Carousel = createClass({
         perspective: PropTypes.number,
         decelerationRate: PropTypes.number,
         scrollSpeed: PropTypes.number,
-        bounceDistance: PropTypes.number
+        bounceDistance: PropTypes.number,
+        onPressItem: PropTypes.func
     },
     render: function () {
         return (
