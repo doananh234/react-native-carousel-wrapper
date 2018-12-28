@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { NativeModules, requireNativeComponent } from 'react-native';
+import { NativeModules, requireNativeComponent, Platform } from 'react-native';
 
 const { RNCarouselManager } = NativeModules;
 import PropTypes from 'prop-types';
@@ -27,5 +27,5 @@ const Carousel = createClass({
 });
 
 const RNCarousel = requireNativeComponent('RNCarousel', Carousel);
-Carousel.Type = RNCarouselManager.Type;
+Carousel.Type = Platform.OS === 'ios' ? RNCarouselManager.Type: {};
 export default Carousel;
