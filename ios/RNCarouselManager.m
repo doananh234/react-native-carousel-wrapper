@@ -33,6 +33,7 @@ RCT_EXPORT_VIEW_PROPERTY(perspective, CGFloat)
 RCT_EXPORT_VIEW_PROPERTY(decelerationRate, CGFloat)
 RCT_EXPORT_VIEW_PROPERTY(scrollSpeed, CGFloat)
 RCT_EXPORT_VIEW_PROPERTY(bounceDistance, CGFloat)
+RCT_EXPORT_VIEW_PROPERTY(autoscroll, CGFloat)
 RCT_EXPORT_VIEW_PROPERTY(onPressItem, RCTBubblingEventBlock)
 - (NSDictionary *)constantsToExport
 {
